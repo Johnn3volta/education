@@ -2,9 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Тестирование ссылки</title>
 </head>
 <body>
-$END$
+<a id="mylink" href="http://educationwda">Щелкни</a>
+<script>
+    url = $('mylink').href;
+    document.write('URL-адрес - ' + url + '<br>');
+
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    numlinks = document.links.length;
+    for (j = 0; j < numlinks; j++) {
+        document.write(document.links[j].href + '<br>')
+    }
+
+    document.write(history.length + '<br>');
+
+    document.write("a: " + (42 > 3) + "<br>");
+    document.write("b: " + (91 < 3) + "<br>");
+    document.write("c: " + (8 == 2) + "<br>");
+    document.write("d: " + (4 < 17) + "<br>");
+
+    if (1 == true) {
+        document.write('true <br>')
+    }
+    // if (1 == TRUE) {
+    //     document.write('TRUE <br>')
+    // }
+
+    myname = 'Peter';
+    myage = 24;
+    document.write("a: " + 42 + "<br>");
+    document.write("b: " + "Hi" + "<br>");
+    document.write("c: " + true + "<br>");
+    document.write("d: " + myname + "<br>");
+    document.write("e: " + myage + "<br>");
+
+    day_number = 339;
+    days_to_new_year = 366 - day_number;
+    if(days_to_new_year < 30){
+        document.write('Скоро новый год !')
+    }
+
+    a = 3.1415927;
+    b = '3.1415927';
+    if(a == b){
+        document.write('1')
+    }
+    if(a === b){
+        document.write('2')
+    }
+
+    str = "Шустрая бурая лисица перепрыгивает через ленивую собаку";
+    with (str){
+        document.write("В строке " + length + " символов <br>")
+        document.write("В верхнем регистре: " + length + " символов <br>")
+    }
+
+
+</script>
 </body>
 </html>

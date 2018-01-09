@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  try{
+      request = new XMLHttpRequest()
+  }
+  catch (err){
+      // Использование другого метода для выполнения запроса
+      // XML Http Request object
+  }
+  finally {
+      alert('Был обнаружен код блока \'try\'.')
+  }
+</script>
 </body>
 </html>

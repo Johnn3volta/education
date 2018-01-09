@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Расширение обьектов</title>
 </head>
 <body>
-$END$
+<script>
+  String.prototype.nbsp = function () {
+      return this.replace(/ /g,'$nbsp')
+  };
+
+  document.write("Шустрая бурая лиса <br>".nbsp())
+
+  String.prototype.trim = function () {
+      return this.replace(/^\s+|\s+$/g,'')
+  };
+  document.write("Пожалуйста,                избавьте меня от лишних пробелов     <br>".trim())
+</script>
 </body>
 </html>

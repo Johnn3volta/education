@@ -2,9 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>User</title>
 </head>
 <body>
-$END$
+<script>
+    function User(forename, username, password) {
+        this.forename = forename;
+        this.username = username;
+        this.password = password;
+
+        User.prototype.showUser = function () {
+            document.write("Имя: " + this.forename + "<br>");
+            document.write("Пользовательское Имя: " + this.username + "<br>");
+            document.write("Пароль: " + this.password + "<br>")
+        }
+    }
+
+    details = new User("Wolfgang", "w.a.Mozart", "composer")
+
+    details.greeting = 'Hello <br>';
+    document.write(details.greeting);
+    details.showUser();
+    // name = details.forename;
+    // if(details.username == "Admin"){
+    //     loginAsAdmin()
+    // }
+  User.prototype.greeting = 'Hello';
+  document.write(details.greeting);
+
+  User.prototype.showUser = function () {
+      document.write("Имя " + this.forename + " Пользователь " + this.username + " Пароль " +this.password)
+  };
+  details.showUser()
+
+</script>
 </body>
 </html>

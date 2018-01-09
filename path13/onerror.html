@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    onerror = errorHandler;
+    document.writ("Добро пожаловать на этот сайт !");
+
+    function errorHandler(message,url,line) {
+        out = 'К сожалению, обнаружена ошибка. \n\n';
+        out += 'Ошибка: ' + message + '\n';
+        out += 'URL: '  + url + '\n';
+        out += 'Строка: '  + line + '\n\n';
+        out += 'Щелкните ОК для продолжения работы. \n\n';
+
+        alert(out);
+        return true
+    }
+
+
+
+
+</script>
 </body>
 </html>

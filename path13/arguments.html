@@ -2,9 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Массив аргументов</title>
 </head>
 <body>
-$END$
+<script>
+    displayItems("Собака", "Кошка", "Пони", "Хомяк", "Черепаха", "cat", "dog");
+
+    function displayItems() {
+        for (i = 0; i < displayItems.arguments.length; i++) {
+            document.write(displayItems.arguments[i] + '<br>')
+        }
+    }
+
+    // document.write(fixNames("the", "DALAS", "CowBoys"));
+
+    // function fixNames() {
+    //     var s = "";
+    //
+    //     for (i = 0; i < fixNames.arguments.length; i++) {
+    //         s += fixNames.arguments[i].charAt(0).toUpperCase() + fixNames.arguments[i].substr(1).toLowerCase() + " ";
+    //     }
+    //
+    //     return s.substr(0, s.length - 1)
+    // }
+
+   words = fixNames2("the", "DALAS", "CowBoys");
+
+    for (i = 0; i < words.length; i++){
+        document.write(words[i] + '<br>')
+    }
+
+        function fixNames2() {
+            var s = new Array();
+
+            for (i = 0; i < fixNames2.arguments.length; i++) {
+                s[i] = fixNames2.arguments[i].charAt(0).toUpperCase() + fixNames2.arguments[i].substr(1).toLowerCase();
+            }
+
+            return s
+        }
+</script>
 </body>
 </html>

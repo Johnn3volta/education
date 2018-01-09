@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Массивы</title>
 </head>
 <body>
-$END$
+<script>
+  myarray = [];
+  myarray.push('first');
+  myarray.push('second');
+  myarray.push('third');
+
+  // document.write(myarray.length);
+
+  for( i =0; i < myarray.length; i++){
+      document.write("Элемент " + i + " = " + myarray[i] + "<br>")
+  }
+
+  balls = {
+      "golf": "Мячи для гольфа, 6",
+      "tennis": "Мячи для тенниса, 3",
+      "football": "Футбольный мяч, 1",
+      "ping-pong": "Мячи для пинг-понга, 12шт."
+  };
+  for (ball in balls) {
+      document.write(ball + " = " + balls[ball] + "<br>")
+  }
+
+  document.write(balls['football'])
+</script>
 </body>
 </html>
