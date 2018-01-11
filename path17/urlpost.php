@@ -1,7 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ContentManager5
- * Date: 11.01.2018
- * Time: 16:01
- */
+
+if(isset($_POST['url'])){
+    echo file_get_contents('http://' . SanitizeString($_POST['url']));
+}
+
+function SanitizeString($str){
+    $str = strip_tags($str);
+    $str = htmlentities($str);
+
+    return stripslashes($str);
+}

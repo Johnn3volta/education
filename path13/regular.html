@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Регулярки</title>
 </head>
 <body>
-$END$
+<script>
+  document.write(/cats/i.test("Cats are fun. Ilike cats<br>"));
+  document.write("<br>Cats are fun. I like cats.".replace(/cats/gi,"dogs"))
+</script>
 </body>
 </html>

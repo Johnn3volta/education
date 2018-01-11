@@ -2,9 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Пример AJAX с GET запросом</title>
 </head>
 <body>
-$END$
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Пример извлечения XML с помощью AJAX</title>
+</head>
+<body style="text-align: center;">
+<h1>Загрузка веб-страницы в контейнер DIV</h1>
+<div id="info">Это предложение будет замененно</div>
+<script>
+    nocache = "&nocache=" + Math.random() * 1000000;
+    url = "rss.news.yahoo.com/rss/topstories";
+    out = "";
+    request = new ajaxRequest();
+    request.open("GET", "xmlget.php?url=" + url + nocache, true);
+
+
+    request.onreadystatechange = function () {
+        th = this;
+        if (th.readyState == 4) {
+            if (th.status == 200) {
+                if (th.responseText != null) {
+                    titles = th.responseXML.getElementsByTagName('title');
+
+                    for (i = 0; i < titles.length; ++i) {
+                        out += titles[i].childNodes[0].nodeValue + '<br>'
+                    }
+                    document.getElementById('info').innerHTML = out
+                } else {
+                    alert("Ошибка AJAX: Данные не получены !")
+                }
+            } else {
+                alert("Ошибка AJAX: " + th.statusText)
+            }
+        }
+    };
+
+    request.send(null);
+
+    function ajaxRequest() {
+        try {
+            var request = new XMLHttpRequest()
+        } catch (e1) {
+            try {
+                request = new ActiveXObject("Msxml2.XMLHTTP")
+            } catch (e2) {
+                try {
+                    request = new ActiveXObject("Microsoft.XMLHTTP")
+                } catch (e3) {
+                    request = false
+                }
+            }
+        }
+        return request
+    }
+
+</script>
+</body>
+</html>
 </body>
 </html>

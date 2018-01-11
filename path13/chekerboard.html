@@ -2,9 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Chekboard</title>
 </head>
 <body>
-$END$
+<script>
+    chekerboard = Array(
+        Array(' ', 'o', ' ', 'o', ' ', 'o', ' ', 'o'),
+        Array('o', ' ', 'o', ' ', 'o', ' ', 'o', ' '),
+        Array(' ', 'o', ' ', 'o', ' ', 'o', ' ', 'o'),
+        Array(' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '),
+        Array(' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '),
+        Array('O', ' ', 'O', ' ', 'O', ' ', 'O', ' '),
+        Array(' ', 'O', ' ', 'O', ' ', 'O', ' ', 'O'),
+        Array('O', ' ', 'O', ' ', 'O', ' ', 'O', ' ')
+    );
+
+    document.write("<pre>");
+    for (i = 0; i < 8; ++i) {
+        for (k = 0; k < 8; ++k) {
+            document.write(chekerboard[i][k] + " ")
+        }
+        document.write("<br>")
+    }
+    document.write("</pre>");
+
+    fruit = ['Банан', 'Виноград'];
+    veg = ['Морковь', 'Капуста'];
+    document.write(fruit.concat(veg) + '<br>');
+    pets = ['cat', 'dog', 'fish'];
+    more_pets = pets.concat('rabbit','homyak');
+    document.write(more_pets + '<br>');
+
+    pops = ['Кошка','Собака','Кролик','Хомяк'];
+    pops.forEach(output);
+
+    function output(element,index,array) {
+        document.write("Элемент с индексом " + index + " содержит значение " + element + "<br>");
+    }
+</script>
 </body>
 </html>
