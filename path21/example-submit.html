@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Событие: Submit</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-$END$
+<form id="form">
+    Имя: <input type="text" id="fname" name="fname"> <br>
+    Фамилия: <input type="text" id="lname" name="lname"> <br>
+    <input type="submit">
+    <script>
+        $('#form').submit(function () {
+            if($('#fname').val() == '' || $('#lname').val() == ''){
+                alert('Пожалуйста введите имя и фамилию');
+                return false
+            }
+        })
+    </script>
+</form>
 </body>
 </html>

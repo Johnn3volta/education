@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>СОбытие: keypress</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-$END$
+<h2>Нажмите какие нибудь клавиши</h2>
+<div id="result"></div>
+<script>
+    $(document).keypress(function (event) {
+        key = String.fromCharCode(event.which);
+        if (key >= 'a' && key <= 'z' || key >= 'A' && key <= 'Z' || key >= '0' && key <= '9'){
+            $('#result').html('Вы нажали ' + key);
+            event.preventDefault()
+        }
+    })
+</script>
 </body>
 </html>

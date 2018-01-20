@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Эффекты: hide & show</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-$END$
+<button id="hide">Спрятать</button>
+<button id="show">показать</button>
+<p id="text">Счелкните по кнопкам Спрятать и Показать !</p>
+<script>
+    $('#hide').click(function(){$('#text').hide('slow', 'linear')});
+    $('#show').click(function(){$('#text').show('slow', 'linear')})
+</script>
+
 </body>
 </html>

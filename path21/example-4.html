@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Событие: дальнейшая обработка мыши</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-$END$
+<h2 id="test">ПРоведи надо мной указателем мыши</h2>
+<script>
+    $('#test').mouseenter(function() { $(this).html('Эй, прекрати щекотать!') } )
+              .mouseleave(function() { $(this).html('Куда же ты подевался?') } )
+</script>
 </body>
 </html>

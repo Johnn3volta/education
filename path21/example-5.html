@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Эффект: растворение и появление</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-$END$
+<button id="fadeout">Растворить</button>
+<button id="fadein">Проявить</button>
+<button id="fadetoggle">Переключить состояние</button>
+<button id="fadeto">Растворить на 50%</button>
+<p id="text">Щелкните по кнопкам раположенным вверху</p>
+<script>
+    $('#fadeout').click(function(){$('#text').fadeOut('slow')});
+    $('#fadein').click(function(){$('#text').fadeIn('slow')});
+    $('#fadetoggle').click(function(){$('#text').fadeToggle('slow')});
+    $("#fadeto").click(function(){$('#text').fadeTo('slow', 0.5)})
+</script>
 </body>
 </html>

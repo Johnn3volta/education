@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <script src="OSC.js"></script>
 </head>
 <body>
-$END$
+В этом доументе содержится только этот текст. <br><br>
+
+<script>
+    alert('Для добавления элемента щелкните по кнопке ОК');
+
+    newdiv = document.createElement('div');
+    newdiv.id = 'NewDiv';
+    document.body.appendChild(newdiv);
+
+    S(newdiv).border = 'solid 1px red';
+    S(newdiv).width = '100px';
+    S(newdiv).height = '100px';
+    newdiv.innerHTML = 'Это новый обьект, вставленный в DOM';
+    tmp = newdiv.offsetTop;
+
+    alert('Для удаления элемента щелкните по кнопке ОК');
+    pnode = newdiv.parentNode;
+    pnode.removeChild(newdiv);
+    tmp = pnode.offsetTop;
+</script>
 </body>
 </html>

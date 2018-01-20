@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Пример jQuery 2</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-$END$
+
+<blockquote>
+    При всей гибкости и эффективности JavaScript, а так же при всем изобилии имеющихся в этом языке встроенных
+    функций все же сохраняется потребность в дополнительных уровнях кода, позволяющих упростить к примеру, получение
+    эффектов анимации, обработку событий и применение технологии Ajax, то есть сделать то,чего нельзя достич применеием
+    обычных средств JavaScript или CSS
+</blockquote>
+<div id="advert">Это реклама</div>
+<p>Это мой <span class="new">новый</span> сайт</p>
+<script>
+    $('blockquote').css('background', 'lime');
+    $('#advert').css('border', '3px dashed red');
+    $('.new').css('text-decoration', 'underline');
+    $('blockquote, #advert, .new').css('font-weight', 'bold');
+</script>
 </body>
 </html>

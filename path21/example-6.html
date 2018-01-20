@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Изменение DOM</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-$END$
+<h2>Пример документа</h2>
+<a href="http://google.com" title="Google">Посетите Google</a>
+<code>Это раздел кода</code>
+<p>
+    <button id="a">Удалить изображение</button>
+    <button id="b">Очитстить цитату</button>
+</p>
+<img src="/img/ball.png" alt="ball" id="ball">
+<blockquote id="quote" style="border:1px dotted #444;height:20px">Тест</blockquote>
+<script>
+    $('a').prepend('Ссылка: ');
+    $('code').before('<hr>').after('<hr>');
+    $('#a').click(function(){$('#ball').remove()});
+    $('#b').click(function(){$('#quote').empty()})
+</script>
 </body>
 </html>

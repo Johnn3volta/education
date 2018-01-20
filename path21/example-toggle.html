@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Эффект: toogle</title>
+    <title>Эффект: toggle</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-
+<button id="toggle">Изменить состояние</button>
+<p id="text">Щелкните по кнопке изменить состояние!</p>
+<script>
+    $('#toggle').click(function(){$('#text').toggle('slow', 'linear')})
+</script>
 </body>
 </html>

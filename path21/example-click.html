@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>События: clik & dbclick</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-$END$
+<h2>Сделайте на кнопках одинарный или двойной счелчок</h2>
+<button class="myclass">Кнопка 1</button>
+<button class="myclass">Кнопка 2</button>
+<button class="myclass">Кнопка 3</button>
+<button class="myclass">Кнопка 4</button>
+<button class="myclass">Кнопка 5</button>
+<script>
+    $('.myclass').click( function() { $(this).slideUp() });
+    $('.myclass').dblclick( function() { $(this).hide() });
+</script>
 </body>
 </html>

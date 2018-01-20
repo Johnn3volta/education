@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>События: blur</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-$END$
+<h2>Щелкните в пределах и за пределами этих областей</h2>
+<input type="text" id="first">
+<input type="text">
+<input type="text">
+<input type="text">
+<script>
+    $('#first').focus();
+    $('input').focus(function(){$(this).css('background', '#ff0')});
+    $('input').blur(function(){$(this).css('background', '#aaa')});
+</script>
 </body>
 </html>

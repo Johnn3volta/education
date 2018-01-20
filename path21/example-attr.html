@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>DOM: attr</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-$END$
+<h2>Пример документа</h2>
+<p><a href="http://google.com" id="link" title="Google">Посетите Google</a></p>
+<script>
+    $('#link').text('Посетите Yahoo!')
+              .attr({href:'http://Yahho.com',title:'Yahoo'})
+    alert('Новый код HTML:\n' + $('p').html())
+</script>
 </body>
 </html>

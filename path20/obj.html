@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function O(i){
+        return typeof i == 'object' ? i : document.getElementById(i);
+    }
+    
+    function S(i) {
+        return O(i).style;
+    }
+</script>
+<div id="myobj">Some Text</div>
+<script>
+    // O('myobj').style.color = 'green'
+    // S('myobj').color = 'green';
+    fred = O('myobj');
+
+    S(fred).color = 'red';
+
+</script>
 </body>
 </html>
