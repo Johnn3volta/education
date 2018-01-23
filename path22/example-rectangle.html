@@ -2,9 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Рисование прямоугольников</title>
+    <script src="/path20/OSC.js"></script>
 </head>
 <body>
-$END$
+<canvas id="mycanvas" width="840" height="240"></canvas>
+<script>
+    canvas = O('mycanvas');
+    context = canvas.getContext('2d');
+
+    context.font = 'bold 140px Times';
+    context.textBaseline = 'top';
+    context.strokeText('WickerpediA', 0, 0);
+
+    image = new Image();
+    image.src = '/img/ball.png';
+
+    image.onload = function() {
+        pattern = context.createPattern(image,'repeat');
+        context.fillStyle = pattern;
+        context.fillText('WickerpediA',0,0);
+        context.strokeText('WickerpediA',0,0);
+    }
+
+    // S(canvas).background = 'lightblue';
+    // context.fillStyle = 'blue';
+    // context.strokeStyle = 'green';
+    // context.fillRect(20,20,600,200);
+    // context.clearRect(40,40, 560,160);
+    // context.strokeRect(60,60,520, 120);
+    // gradient = context.createLinearGradient(0,80,640,80);
+    // gradient.addColorStop(0,'white');
+    // gradient.addColorStop(1,'black');
+    // context.fillStyle = gradient;
+    // context.fillRect(80,80,480,80);
+    //
+    // gradient = context.createLinearGradient(0, 0, 160, 0)
+    // gradient.addColorStop(0, 'white')
+    // gradient.addColorStop(1, 'black')
+    // context.fillStyle = gradient
+    // context.fillRect(20, 20, 135, 200)
+    // gradient = context.createLinearGradient(0, 0, 0, 240)
+    // gradient.addColorStop(0, 'yellow')
+    // gradient.addColorStop(1, 'red')
+    // context.fillStyle = gradient
+    // context.fillRect(175, 20, 135, 200)
+    // gradient = context.createLinearGradient(320, 0, 480, 240)
+    // gradient.addColorStop(0, 'green')
+    // gradient.addColorStop(1, 'purple')
+    // context.fillStyle = gradient
+    // context.fillRect(330, 20, 135, 200)
+    // gradient = context.createLinearGradient(480, 240, 640, 0)
+    // gradient.addColorStop(0, 'orange')
+    // gradient.addColorStop(1, 'magenta')
+    // context.fillStyle = gradient
+    // context.fillRect(485, 20, 135, 200)
+</script>
 </body>
 </html>

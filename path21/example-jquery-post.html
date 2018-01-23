@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Jquery Ajax Post</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
-<body>
-$END$
+<body style="text-align: center">
+<h1>Загрузка вебстраницы в DIV</h1>
+<div id="info">Это предложение будет заменено</div>
+<script>
+    $.post('/path17/urlpost.php',{url:'amazon.com/gp/aw'}, function(data){
+        $('#info').html(data)
+    })
+</script>
 </body>
 </html>

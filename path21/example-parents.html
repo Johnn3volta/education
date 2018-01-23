@@ -2,9 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-$END$
+<div>
+    <div>
+        <section>
+            <blockquote>
+                <ul>
+                    <li>Элемент 1</li>
+                    <li id="elem">Элемент 2</li>
+                    <li>Элемент 3</li>
+                </ul>
+            </blockquote>
+        </section>
+    </div>
+    <div>
+        <section>
+            <blockquote>
+                <ul>
+                    <li>Элемент 1</li>
+                    <li>Элемент 2</li>
+                    <li>Элемент 3</li>
+                </ul>
+            </blockquote>
+        </section>
+    </div>
+</div>
+<script>
+    $('#elem').parents('div').css('background','yellow');
+    $('#elem').parentsUntil('div').css('text-decoration','underline')
+</script>
 </body>
 </html>

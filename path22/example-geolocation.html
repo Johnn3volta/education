@@ -2,9 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Пример Геолокации</title>
+    <script src="/path20/OSC.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 </head>
 <body>
-$END$
+<div id="status"></div>
+<div id="map"></div>
+<script>
+    if (typeof navigator.geolocation == 'undefined') {
+        alert('Геолокация не поддерживается')
+    } else {
+        navigator.geolocation.getCurrentPosition(granted, denied)
+    }
+
+    function granted(position) {
+        O('status').innerHTML('Разрешение дано');
+        S('map').border = '1px solid black';
+        S('map').width = '640px';
+        S('map').height = '320px';
+
+        var lat = position.coords.latitude;
+        var long = position.coords.longitude;
+        var gmap = O('map');
+        var gopts = {
+            center: new google.maps.LatLng(lat,long),
+            zoom:9, mapTypeId:google.maps.getTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(gmap,gopts)
+    }
+    
+    function denied(error) {
+        var message;
+
+        switch(error.code){
+            case 1:message = 'Доступ запрещен'; break;
+            case 2:message = 'Позиция недоступна';break;
+            case 3:message = 'Время ожидания оперции истекло';break;
+            case 4:message = 'Неизвестная ошибка';break;
+        }
+        O('status').innerHTML = message
+    }
+</script>
 </body>
 </html>

@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Холст HTML5</title>
+    <script src="/path20/OSC.js"></script>
 </head>
 <body>
-$END$
+<canvas id="mycanvas" width="320" height="240">
+    Это элемент Canvas с идентификатором <i>mycanvas</i>
+    Этот текст виден только в браузерах не поддерживающих HTML5
+</canvas>
+<img id="myimage">
+<script>
+    canvas = O('mycanvas');
+    context = canvas.getContext('2d');
+    context.fillStyle = 'red';
+    S(canvas).border = '1px solid black';
+    context.beginPath();
+    context.moveTo(160,120);
+    context.arc(160,120,70,0,Math.PI * 2, false );
+    context.closePath();
+    context.fill();
+
+    S('myimage').border = '1px solid black';
+    O('myimage').src = canvas.toDataURL('image/jpeg', 1)
+</script>
 </body>
 </html>

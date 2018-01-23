@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Обход DOM</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-$END$
+<ul>
+    <li>Эелемент 1</li>
+    <li>Эелемент 2</li>
+    <li>Эелемент 3</li>
+</ul>
+<ul class="memo">
+    <li>Эелемент 1</li>
+    <li>Эелемент 2</li>
+    <li>Эелемент 3</li>
+</ul>
+<ul>
+    <li>Эелемент 1</li>
+    <li>Эелемент 2</li>
+    <li>Эелемент 3</li>
+</ul>
+<script>
+    $('li').parent().css('font-weight', 'bold')
+    $('li').parent('.memo').css('list-style-type', 'circle')
+</script>
 </body>
 </html>
